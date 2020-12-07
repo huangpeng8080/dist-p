@@ -75,7 +75,7 @@ var BLACK_STYLE=
     CorssCursorBGColor: "rgb(43,54,69)",            //十字光标背景
     CorssCursorTextColor: "rgb(255,255,255)",
     CorssCursorTextFont: 12*GetDevicePixelRatio() +"px 微软雅黑",
-    CorssCursorHPenColor: "rgb(130,130,130)",           //十字光标线段颜色
+    CorssCursorHPenColor: "rgba(130,130,130,0)",           //十字光标线段颜色
     CorssCursorVPenColor: "rgb(130,130,130)",           //十字光标线段颜色
 
     KLine:

@@ -17600,7 +17600,7 @@ function StockChip()
         }
 
         this.DrawBorder();
-        if (this.SizeChange==true) this.DrawButton();
+        //if (this.SizeChange==true) this.DrawButton();
 
         this.SizeChange=false;
     }
@@ -17731,8 +17731,8 @@ function StockChip()
         const ICON_LIST=
         [
             {Class:'chip_default icon iconfont icon-chip_default', ID:'chip_default',Color:['#808080','#FF0000'],Title:'默认筹码分布图'},
-            {Class:'chip_long icon iconfont icon-chip_date',ID:'chip_long',Color:['#808080','#FF8000'],Title:'远期筹码分布图'},
-            {Class:'chip_recent icon iconfont icon-chip_date',ID:'chip_recent', Color:['#808080','#0000CC'],Title:'近期筹码分布图'}
+           /* {Class:'chip_long icon iconfont icon-chip_date',ID:'chip_long',Color:['#808080','#FF8000'],Title:'远期筹码分布图'},
+            {Class:'chip_recent icon iconfont icon-chip_date',ID:'chip_recent', Color:['#808080','#0000CC'],Title:'近期筹码分布图'}*/
         ];
 
         var spanHtml='';
@@ -26561,7 +26561,7 @@ function JSChartResource()
     this.CorssCursorBGColor="rgb(43,54,69)";            //十字光标背景
     this.CorssCursorTextColor="rgb(255,255,255)";       //十字光文字颜色
     this.CorssCursorTextFont=14*GetDevicePixelRatio() +"px 微软雅黑";
-    this.CorssCursorHPenColor="rgb(130,130,130)";          //十字光标线段颜色(水平)
+    this.CorssCursorHPenColor="rgba(130,130,130,0)";          //十字光标线段颜色(水平)
     this.CorssCursorVPenColor="rgb(130,130,130)";          //十字光标线段颜色(垂直)
 
     this.LockBGColor = "rgb(220, 220, 220)";        //指标锁区域颜色
