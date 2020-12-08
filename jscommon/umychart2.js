@@ -17576,14 +17576,59 @@ function StockChip()
     
     this.Draw=function()
     {
+
+       /* var isHScreen=(this.ChartFrame.IsHScreen===true);
+        var frame=this.ChartFrame.SubFrame[this.FrameID].Frame;
+        var chartBorder=frame.ChartBorder;
+
+        var height=chartBorder.GetHeightEx();
+        var left=chartBorder.GetRight();
+        var top=chartBorder.GetTopEx();
+        var bottom=chartBorder.GetBottomEx();
+        var width=this.Width;
+        if (width>this.ChartBorder.Right) width=this.ChartBorder.Right;
+
+        if (isHScreen)
+        {
+            left=chartBorder.GetBottom();
+            top=chartBorder.GetRight();
+            bottom=chartBorder.GetLeft();
+            var width=this.Width;
+            if (width>this.ChartBorder.Bottom) width=this.ChartBorder.Bottom;
+        }
+
+        var rtClient={ Left:left, Top:top, Right:left+width, Bottom:bottom, Height:height, Width:width };
+        */
+
+
+
         this.PixelRatio=GetDevicePixelRatio();
-        var left=ToFixedPoint(this.ChartBorder.GetRight()+this.Left);
+
+        var isHScreen=(this.ChartFrame.IsHScreen===true);
+        var frame=this.ChartFrame.SubFrame[this.FrameID].Frame;
+        var chartBorder=frame.ChartBorder;
+
+        var height=chartBorder.GetHeightEx();
+        var left=chartBorder.GetRight();
+        var top=chartBorder.GetTopEx();
+        var bottom=chartBorder.GetBottomEx();
+        var width=this.Width;
+        if (width>this.ChartBorder.Right) width=this.ChartBorder.Right;
+        if (isHScreen)
+        {
+            left=chartBorder.GetBottom();
+            top=chartBorder.GetRight();
+            bottom=chartBorder.GetLeft();
+            var width=this.Width;
+            if (width>this.ChartBorder.Bottom) width=this.ChartBorder.Bottom;
+        }
+       /* var left=ToFixedPoint(this.ChartBorder.GetRight()+this.Left);
         var top=ToFixedPoint(this.ChartBorder.GetTop());
         var right=ToFixedPoint(left+this.Width-1*this.PixelRatio);
         var bottom=ToFixedPoint(this.ChartBorder.GetBottom());
         var width=right-left;
-        var height=bottom-top;
-        this.ClientRect={Left:left,Top:top,Width:width,Height:height};
+        var height=bottom-top;*/
+        this.ClientRect={Left:left, Top:top, Right:left+width, Bottom:bottom, Height:height, Width:width };
 
         if (this.CalculateChip())
         {
@@ -18535,6 +18580,7 @@ function DepthMapPaint()
         }
 
         var rtClient={ Left:left, Top:top, Right:left+width, Bottom:bottom, Height:height, Width:width };
+        //alert(JSON.stringify({ Left:left, Top:top, Right:left+width, Bottom:bottom, Height:height, Width:width }))
         this.YRange={ Max:null, Min:0 };
         for(var i in this.Data)
         {

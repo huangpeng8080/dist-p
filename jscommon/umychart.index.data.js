@@ -532,7 +532,7 @@ MAVOL2:MA(VOLUME,M2);'
 
 JSIndexScript.prototype.RSI=function()
 {
-    let data=
+   /*  let data=
     {
         Name:'RSI', Description:'相对强弱指标', IsMainIndex:false,
         Args:[ { Name:'N1', Value:6}, { Name:'N2', Value:12}, { Name:'N3', Value:24}  ],
@@ -542,7 +542,18 @@ RSI1:SMA(MAX(CLOSE-LC,0),N1,1)/SMA(ABS(CLOSE-LC),N1,1)*100;\n\
 RSI2:SMA(MAX(CLOSE-LC,0),N2,1)/SMA(ABS(CLOSE-LC),N2,1)*100;\n\
 RSI3:SMA(MAX(CLOSE-LC,0),N3,1)/SMA(ABS(CLOSE-LC),N3,1)*100;'
 
-    };
+    }; */
+    let data=
+        {
+            Name:'RSI', Description:'相对强弱指标', IsMainIndex:false,
+            Args:[ { Name:'N1', Value:6}, { Name:'N2', Value:12}, { Name:'N3', Value:24}  ],
+            Script: //脚本
+                'LC:=REF(CLOSE,1);\n\
+                RSI1:SMA(MAX(CLOSE-LC,0),N1,1)/SMA(ABS(CLOSE-LC),N1,1)*100;\n\
+                RSI2:SMA(MAX(CLOSE-LC,0),N2,1)/SMA(ABS(CLOSE-LC),N2,1)*100;\n\
+                '
+
+        };
 
     return data;
 }
